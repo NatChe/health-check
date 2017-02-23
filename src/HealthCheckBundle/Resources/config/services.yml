@@ -1,0 +1,8 @@
+services:
+    health_check.manager:
+        class: HealthCheckBundle\Model\HealthCheckManager
+        autowire: true
+
+    health_check.mysql_check:
+        class: HealthCheckBundle\Model\MysqlCheck
+        arguments: ["%database_host%","%database_user%","%database_password%","%database_port%","%database_name%","@logger"]
